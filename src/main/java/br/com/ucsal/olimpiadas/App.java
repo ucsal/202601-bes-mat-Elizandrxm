@@ -44,7 +44,7 @@ public class App {
         System.out.print("> ");
     }
 
-    // Método para popular o sistema com dados iniciais (facilita seus testes)
+    // Método para popular o sistema com dados iniciais (facilitando os testes)
     private static void seed() {
         System.out.println("Carregando dados iniciais...");
        
