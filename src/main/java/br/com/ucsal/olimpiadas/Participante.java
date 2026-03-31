@@ -1,5 +1,4 @@
 package br.com.ucsal.olimpiadas;
-
 public class Participante {
 	private long id;
 	private String nome;
@@ -28,4 +27,6 @@ public class Participante {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+
 }
