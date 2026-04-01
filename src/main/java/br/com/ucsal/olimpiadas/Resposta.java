@@ -2,32 +2,33 @@ package br.com.ucsal.olimpiadas;
 
 public class Resposta {
 
-	private long questaoId;
-	private char alternativaMarcada;
-	private boolean correta;
+    // MUDANÇA: Usar Long (Objeto) para manter o padrão das outras classes de ID
+    private Long questaoId;
+    private char alternativaMarcada;
+    private boolean correta;
 
-	public long getQuestaoId() {
-		return questaoId;
-	}
+    public Long getQuestaoId() {
+        return questaoId;
+    }
 
-	public void setQuestaoId(long questaoId) {
-		this.questaoId = questaoId;
-	}
+    public void setQuestaoId(Long questaoId) {
+        this.questaoId = questaoId;
+    }
 
-	public char getAlternativaMarcada() {
-		return alternativaMarcada;
-	}
+    public char getAlternativaMarcada() {
+        return alternativaMarcada;
+    }
 
-	public void setAlternativaMarcada(char alternativaMarcada) {
-		this.alternativaMarcada = alternativaMarcada;
-	}
+    public void setAlternativaMarcada(char alternativaMarcada) {
+        // Garantimos que a alternativa seja salva sempre em maiúsculo
+        this.alternativaMarcada = Character.toUpperCase(alternativaMarcada);
+    }
 
-	public boolean isCorreta() {
-		return correta;
-	}
+    public boolean isCorreta() {
+        return correta;
+    }
 
-	public void setCorreta(boolean correta) {
-		this.correta = correta;
-	}
-
+    public void setCorreta(boolean correta) {
+        this.correta = correta;
+    }
 }

@@ -1,41 +1,56 @@
-package br.com.ucsal.olimpiadas;
+package br.com.ucsal.olimpiadas; // Verifique se o package condiz com suas pastas
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Tentativa {
-	private long id;
-	private long participanteId;
-	private long provaId;
+    // MUDANÇA: Usar Long (Objeto) para IDs. 
+    // Isso permite que o Service faça comparações seguras e use métodos como .equals()
+    private Long id;
+    private Long participanteId;
+    private Long provaId;
 
-	private final List<Resposta> respostas = new ArrayList<>();
+    // MUDANÇA: Inicializar a lista de respostas aqui.
+    // Assim garantimos que ela nunca será nula, evitando NullPointerException.
+    private final List<Resposta> respostas = new ArrayList<>();
 
-	public long getId() {
-		return id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public long getParticipanteId() {
-		return participanteId;
-	}
+    public Long getParticipanteId() {
+        return participanteId;
+    }
 
-	public void setParticipanteId(long participanteId) {
-		this.participanteId = participanteId;
-	}
+    public void setParticipanteId(Long participanteId) {
+        this.participanteId = participanteId;
+    }
 
-	public long getProvaId() {
-		return provaId;
-	}
+    public Long getProvaId() {
+        return provaId;
+    }
 
-	public void setProvaId(long provaId) {
-		this.provaId = provaId;
-	}
+    public void setProvaId(Long provaId) {
+        this.provaId = provaId;
+    }
 
-	public List<Resposta> getRespostas() {
-		return respostas;
-	}
+    public List<Resposta> getRespostas() {
+        return respostas;
+    }
 
+  // MUDANÇA: Método para calcular a nota da tentativa.
+    // Ele percorre as respostas e conta quantas estão corretas.
+    public int calcularNota() {
+        int acertos = 0;
+        for (Resposta r : respostas) {
+            if (r.isCorreta()) {
+                acertos++;
+            }
+        }
+        return acertos;
+    }
 }
